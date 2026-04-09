@@ -1,6 +1,6 @@
 def qsort(arr, left, right):
     if len(arr[left:right + 1]) <= 1:
-        return arr[left:right + 1]
+        return arr
 
     pivot = right
     i = left
@@ -12,10 +12,14 @@ def qsort(arr, left, right):
 
     arr[i], arr[pivot] = arr[pivot], arr[i]
 
-    return qsort(arr, left, i-1) + [pivot] + qsort(arr, i+1, right)
+    qsort(arr, left, i-1)
+    qsort(arr, i+1, right)
+
+    return arr
 
 
 if __name__ == '__main__':
     arr = [5, 1, 3, 2, 45, 7, 3, 10, 4]
-    qsort(arr, 0, len(arr) - 1)
-    print(arr)
+    a = qsort(arr, 0, len(arr) - 1)
+    print(a)
+
