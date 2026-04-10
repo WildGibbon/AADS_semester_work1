@@ -1,15 +1,26 @@
+from sorts import *
 import time
-from random import randint
+import sys
+import matplotlib.pyplot
 
-import sorts
+sys.setrecursionlimit(10000)
 
 
-a = [randint(0, 10000000) for i in range(1000000)]
+data_path = "data_generation/data.txt"
+data = []
+times = []
 
-start = time.time()
-sorts.heapsort(a)
-print(time.time() - start)
 
-start = time.time()
-sorts.qsort(a)
-print(time.time() - start)
+with open(data_path, "r") as f:
+    lines = f.readlines()
+    for line in lines:
+        data.append(list(map(int, line.split())))
+
+
+for i in range(0, len(data)):
+    start = time.time()
+    introsort(data[i])
+    times.append((time.time() - start))
+
+matplotlib.pyplot.plot(times)
+matplotlib.pyplot.show()

@@ -1,14 +1,13 @@
 import math
-
-from sorts import *
+import sorts
 
 
 def __introsort(arr, left, right, depth):
     if depth == 0:
-        se_heapsort(arr, left, right + 1)
+        sorts.se_heapsort(arr, left, right + 1)
 
-    if right - left <= 16:
-        insertion_sort(arr, left, right + 1)
+    if False:
+        sorts.insertion_sort(arr, left, right + 1)
 
     if right <= left:
         return

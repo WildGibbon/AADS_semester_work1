@@ -31,12 +31,12 @@ def se_heapsort(arr, start, end):
         __heapify(arr, root, end)
 
     for i in range(end, start, -1):
-        arr[0], arr[i - 1] = arr[i - 1], arr[0]
-        __heapify(arr, 0, i - 1)
+        arr[start], arr[i - 1] = arr[i - 1], arr[start]
+        __heapify(arr, start, i - 1)
 
 
 if __name__ == '__main__':
     arr = [6, 5, 8, 7, 1, 0, 10, 9, 3, 2]
-    se_heapsort(arr, 0, 10)
+    se_heapsort(arr, 4, 10)
     print(arr)
 

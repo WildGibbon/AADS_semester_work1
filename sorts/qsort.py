@@ -1,3 +1,6 @@
+from random import random
+
+
 def __qsort(arr, left, right):  # тута мы включаем концы
     if right <= left:
         return
