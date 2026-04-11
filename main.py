@@ -1,3 +1,5 @@
+from cmath import log
+
 from scipy.ndimage import label
 
 from sorts import *
@@ -32,20 +34,14 @@ for i in range(0, len(data)):
     qsort(data[i].copy())
     time_2 = time.perf_counter() - start
 
-    start = time.perf_counter()
-    data[i].copy().sort()
-    time_3 = time.perf_counter() - start
-
     print(i)
 
     times_1.append(time_1)
     times_2.append(time_2)
-    times_3.append(time_3)
     lengths.append(len(data[i]))
 
-
+matplotlib.pyplot.plot(lengths, [i*log(i, 2)*0.000000065 for i in lengths], label="nlogn")
 matplotlib.pyplot.plot(lengths, times_1, label="introsort")
 matplotlib.pyplot.plot(lengths, times_2, label="qsort")
-matplotlib.pyplot.plot(lengths, times_3, label="sort()")
 matplotlib.pyplot.legend()
 matplotlib.pyplot.show()
