@@ -3,13 +3,15 @@ import sorts
 
 
 def __introsort(arr, left, right, depth):
+    if right <= left:
+        return
+
     if depth == 0:
         sorts.se_heapsort(arr, left, right + 1)
+        return
 
-    if False:
+    if right - left < 16:
         sorts.insertion_sort(arr, left, right + 1)
-
-    if right <= left:
         return
 
     pivot = right
