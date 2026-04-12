@@ -1,8 +1,11 @@
 from abc import ABC
 
 
-class ICounting(ABC):
+class ICounter(ABC):
     def get_counter(self):
+        pass
+
+    def increase_counter(self):
         pass
 
     def reset_counter(self):
