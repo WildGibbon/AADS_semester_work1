@@ -1,7 +1,7 @@
 from random import randint
 
 
-class arr_random_generator:
+class ArrRandomGenerator:
     def __init__(self, upper_limit, lower_limit, count, save_path):
         self.upper_limit = upper_limit
         self.lower_limit = lower_limit
@@ -28,6 +28,6 @@ class arr_random_generator:
 
 
 if __name__ == "__main__":
-    generator = arr_random_generator(10000, 100, 100, "data.txt")
+    generator = ArrRandomGenerator(100000, 100, 100, "data.txt")
     generator.execute()
 

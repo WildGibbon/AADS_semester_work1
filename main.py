@@ -40,7 +40,7 @@ for i in range(0, len(data)):
     times_2.append(time_2)
     lengths.append(len(data[i]))
 
-matplotlib.pyplot.plot(lengths, [i*log(i, 2)*0.000000065 for i in lengths], label="nlogn")
+matplotlib.pyplot.plot(lengths, [i*log(i, 2)*0.000000065 for i in lengths], label="nlogn(*65*10^-7)")
 matplotlib.pyplot.plot(lengths, times_1, label="introsort")
 matplotlib.pyplot.plot(lengths, times_2, label="qsort")
 matplotlib.pyplot.legend()
