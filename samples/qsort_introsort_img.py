@@ -5,13 +5,14 @@ import pandas as pd
 import time
 import sys
 
+
 sys.setrecursionlimit(10000)
 
-data_path = "../data_generation/data.txt"
 times_1 = []
 times_2 = []
 lengths = []
 
+data_path = "../data_generation/data.txt"
 data = []
 
 with open(data_path, "r") as f:
@@ -41,4 +42,4 @@ df['length'] = lengths
 df['introsort'] = times_1
 df['qsort'] = times_2
 
-dfi.export(df, "../results/data.png", dpi=300)
+dfi.export(df, "../results/qsort_introsort.png", dpi=300)

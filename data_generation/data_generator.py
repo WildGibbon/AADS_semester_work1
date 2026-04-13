@@ -28,6 +28,6 @@ class ArrRandomGenerator:
 
 
 if __name__ == "__main__":
-    generator = ArrRandomGenerator(100000, 100, 10, "../samples/data.txt")
+    generator = ArrRandomGenerator(100000, 100, 10, "data.txt")
     generator.execute()
 
