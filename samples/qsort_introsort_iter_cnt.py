@@ -14,7 +14,7 @@ qsort_counter = Counter()
 introsort_sort = Introsort.CountingIntrosort(introsort_counter)
 qsort_sort = Qsort.CountingQsort(qsort_counter)
 
-data_path = "data.txt"
+data_path = "../data_generation/data.txt"
 data = []
 counts_1 = []
 counts_2 = []
