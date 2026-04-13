@@ -8,7 +8,7 @@ import sys
 sys.setrecursionlimit(10000)
 
 
-data_path = "data_generation/data.txt"
+data_path = "../data_generation/data.txt"
 data = []
 times_1 = []
 times_2 = []
