@@ -39,8 +39,9 @@ for i in range(0, len(data)):
     counts_2.append(qsort_counter.get_counter())
     lengths.append(len(data[i]))
 
+log_coef = (counts_1[-1] + counts_2[-1]) / (2*log(lengths[-1], 2)*lengths[-1])
 
-plt.plot(lengths, [i*log(i, 2)*1.27 for i in lengths], label="nlogn")
+plt.plot(lengths, [i*log(i, 2)*log_coef for i in lengths], label="nlogn")
 plt.plot(lengths, counts_1, label="introsort")
 plt.plot(lengths, counts_2, label="qsort")
 plt.legend()
